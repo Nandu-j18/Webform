@@ -31,8 +31,28 @@ chat='false'>
         
         <!-- Submit Button -->
         <input type="submit" value="Send Message">
+
+<input type="submit" onclick="identify_call()">
+
     </form>
-    <script>
+
+<script>
+    function identify_call() {
+        var new_contact = {
+            "First name": document.getElementById("first_name_2").value,
+            "Last name": document.getElementById("last_name_2").value,
+            "Email": document.getElementById("email_2").value,
+            "Mobile": document.getElementById("mobile_2").value,
+            "User Agent":"testing123909",
+            "company": {
+                "Name": document.getElementById("company_name_2").value
+            }
+        };
+        var identifier = document.getElementById("email_2").value; // Using email as identifier
+        fwcrm.identify(identifier, new_contact);
+        // You might need to handle the submission of the form here, e.g., redirecting to another page or displaying a success message
+    }
+</script>
 document.querySelector("body > form").id = "test";
 </script>
 </body>
